@@ -1,0 +1,31 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "Gabriel Loiseau"
+
+[params]
+  displayName = "EN"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
+  # logo = "img/blowfish_logo_transparent.png"
+  # secondaryLogo = "PATH"
+  description = "PhD Student at Vade & Inria Lille (Magnet)"
+  # copyright = "Copy, _right?_ :thinking_face:"
+
+[author]
+  name = "Gabriel Loiseau"
+  image = "img/avatar.jpg"
+  headline = "PhD Student at Vade & Inria Lille (Magnet)"
+  bio = "PhD Student at Vade & Inria Lille (Magnet)"
+  links = [
+    { envelope = "mailto:gabriel.loiseau@vadesecure.com" },
+    { graduation-cap = "https://scholar.google.com/citations?user=W_Ck-tkAAAAJ" },
+    #{ mastodon = "https://masto.ai/" },
+    { acl-logo = "https://aclanthology.org/people/g/gabriel-loiseau/" },
+    { github = "https://github.com/gabrielloiseau" },
+    { twitter = "https://twitter.com/loiseaulg" },
+    { linkedin = "https://www.linkedin.com/in/gabriel-loiseau/" },
+  ]
+
+  
