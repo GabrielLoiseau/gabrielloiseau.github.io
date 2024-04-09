@@ -1,6 +1,6 @@
 ---
-title: "Hello! :tada:"
-description: "This is a demo of the Blowfish theme for Hugo."
+title: "Gabriel Loiseau"
+description: "PhD Student at Vade & Inria Lille"
 ---
 
 Hello! I am a first year PhD student in Machine Learning at <a href="https://www.vadesecure.com/">Vade</a> and <a href="https://www.inria.fr/fr/centre-inria-de-luniversite-de-lille">Inria Lille</a>, advised by <a href="http://researchers.lille.inria.fr/tommasi/">Marc Tommasi</a>, <a href="https://sileod.github.io/">Damien Siléo</a> (Inria <a href="https://team.inria.fr/magnet/">MAGNET</a> team), <a href="https://driquet.info/">Damien Riquet</a> and <a href="#">Maxime Meyer</a> (Vade). My research focuses on the implementation of utility-preserving automatic text anonymization methods.
