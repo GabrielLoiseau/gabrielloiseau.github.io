@@ -1,13 +1,14 @@
 ---
-title: "Posts"
+title: "All posts"
 description: "Learn how to use Blowfish and its features."
 
+
 cascade:
-  showDate: false
+  showDate: true
   showAuthor: false
   invertPagination: true
+  showReadingTime: false
 
-  
 ---
 
 {{< lead >}}

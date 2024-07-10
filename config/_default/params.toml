@@ -12,7 +12,7 @@ autoSwitchAppearance = true
 enableSearch = true
 enableCodeCopy = true
 
-mainSections = ["docs"]
+# mainSections = ["docs"]
 # robots = ""
 
 disableImageOptimization = false
@@ -40,7 +40,7 @@ smartTOCHideUnfocusedChildren = false
   # homepageImage = "/img/iceland.jpg" # used in: hero, and card
   showRecent = false
   showRecentItems = 12
-  showMoreLink = true
+  showMoreLink = false
   showMoreLinkDest = "docs"
   cardView = false
   cardViewScreenWidth = false
@@ -51,42 +51,45 @@ smartTOCHideUnfocusedChildren = false
   showViews = false
   showLikes = false
   showDateUpdated = false
-  showAuthor = true
+  showDateOnlyInArticle = true
+  showAuthor = false
   showHero = true
-  heroStyle = "basic" # valid options: basic, big, background, thumbAndBackground
+  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background
+  layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
   showBreadcrumbs = true
   showDraftLabel = true
-  showEdit = true
-  editURL = "https://github.com/nunocoracao/blowfish/tree/main/exampleSite/content"
+  showEdit = false
+  editURL = "https://github.com/gabrielloiseau"
   editAppendPath = true
   seriesOpened = false
   showHeadingAnchors = true
   showPagination = true
   invertPagination = false
-  showReadingTime = true
+  showReadingTime = false
   showTableOfContents = true
-  showRelatedContent = true
+  showRelatedContent = false
   relatedContentLimit = 6
   showTaxonomies = true 
   showAuthorsBadges = true 
   showWordCount = false
   #sharingLinks = [ "linkedin", "twitter", "reddit", "whatsapp", "telegram", "pinterest", "facebook", "email"]
+  showZenMode = false
 
 [list]
   showHero = false
-  heroStyle = "basic" # valid options: basic, big, background, thumbAndBackground
+  #heroStyle = "basic" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background
-  layoutBackgroundHeaderSpace = false
+  layoutBackgroundHeaderSpace = true
   showBreadcrumbs = false
-  showSummary = false
+  showSummary = true # show summary 
   showViews = false
   showLikes = false
-  showTableOfContents = true
-  showCards = true
-  groupByYear = false
-  cardView = true
-  cardViewScreenWidth = false
+  showTableOfContents = false
+  showCards = false
+  groupByYear = false ##
+  cardView = false ##
+  cardViewScreenWidth = true
   constrainItemsWidth = false
 
 [sitemap]
@@ -103,7 +106,7 @@ smartTOCHideUnfocusedChildren = false
   cardView = false
 
 [term]
-  showHero = true
+  showHero = false
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   showBreadcrumbs = false
   showViews = false
@@ -121,17 +124,6 @@ smartTOCHideUnfocusedChildren = false
   messagingSenderId = "60108104191"
   appId = "1:60108104191:web:039842ebe1370698b487ca"
   measurementId = "G-PEDMYR1V0K"
-
-[fathomAnalytics]
-  # site = "ABC12345"
-  # domain = "llama.yoursite.com"
-
-[buymeacoffee]
-  identifier = "nunocoracao"
-  globalWidget = false
-  globalWidgetMessage = ""
-  globalWidgetColor = "#FFDD00"
-  globalWidgetPosition = "Right"
 
 [verification]
   # google = ""
