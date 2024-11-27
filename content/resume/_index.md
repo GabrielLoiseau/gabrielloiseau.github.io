@@ -24,17 +24,5 @@ Natural Language Processing and Music Information Retrieval
 {{< /timeline >}}
 
 ## Education
-{{< timeline >}}
-
-{{< timelineItem icon="graduation-cap" header="Msc. in Data Science" badge="2020-2022" subheader="Centrale Lille, University of Lille, IMT Nord Europe" >}}
-	Second year thesis: <i>Analysis of activity traces on an online programming platform</i><br>
-	First year thesis: <i>PictureToUML: Conversion of pictures to UML files</i><br>
-	<b>High Honors</b>
-{{< /timelineItem >}}
-
-{{< timelineItem icon="graduation-cap" header="Bsc. in Computer Science" badge="2017-2020" subheader="Polytechnic University of Hauts-de-France" >}}
-	Final year project: <i>Detection and filtering of offensive content in instant messaging using neural networks</i><br>
-	<b>High Honors</b>
-{{< /timelineItem >}}
-
-{{< /timeline >}}
+- Msc. in Data Science, Centrale Lille, University of Lille, IMT Nord Europe, 2022 - <b>High Honors</b>
+- Bsc. in Computer Science, Polytechnic University of Hauts-de-France, 2020 - <b>High Honors</b>
