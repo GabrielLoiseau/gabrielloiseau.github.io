@@ -48,7 +48,7 @@
 [[main]]
   identifier = "email"
   pre = "envelope"
-  url = "mailto:gabriel.loiseau@vadesecure.com"
+  url = "mailto:gabriel.loiseau@hornetsecurity.com"
   weight = 200
 
 
