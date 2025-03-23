@@ -1,28 +1,32 @@
 ---
-title: "Curriculum vitae"
+title: ""
 layout: "simple"
 ---
-## Work Experience
-{{< timeline >}}
+# Professional Experience
 
-{{< timelineItem icon="globe" header="PhD Student" badge="Sept. 2023 - Present" subheader="Vade / Inria" >}}
-Privacy- and Utility-Preserving Transfer Learning for Text Anonymization
-{{< /timelineItem >}}
+### Hornetsecurity & Inria Lille
+*PhD Student* | September 2023 - Present
+- Conducting research on language model fine-tuning, evaluation, and utility-preserving text anonymization techniques
 
-{{< timelineItem icon="globe" header="Research Scientist" badge="Sept. 2022 - Present" subheader="Vade" >}}
-Applied Research on Machine Learning and Cybersecurity. 
-{{< /timelineItem >}}
+### Hornetsecurity
+*Research Scientist* | September 2022 - Present
+- Applied research in Machine Learning and Cybersecurity
+- Developing cutting-edge solutions to enhance threat detection capabilities
 
-{{< timelineItem icon="globe" header="Research Intern" badge="Mar. 2022 - Sept. 2022" subheader="Vade" >}}
-Deep Learning for Phishing detection
-{{< /timelineItem >}}
+### Vade (Acquired by Hornetsecurity)
+*AI Research Intern* | March 2022 - September 2022
+- Designed and implemented Deep Learning models for advanced phishing detection
+- Contributed to core security algorithms that improved detection accuracy
 
-{{< timelineItem icon="globe" header="Research Intern" badge="Apr. 2021 - Aug. 2021" subheader="CRIStAL (Algomus) & Inria (Magnet)" >}}
-Natural Language Processing and Music Information Retrieval
-{{< /timelineItem >}}
+### CRIStAL (Algomus) & Inria (Magnet)
+*Research Intern* | April 2021 - August 2021
+- Worked at the intersection of Natural Language Processing and Music Information Retrieval
+- Developed explainability approaches for music analysis using NLP techniques
 
-{{< /timeline >}}
+# Education
 
-## Education
-- Msc. in Data Science, Centrale Lille, University of Lille, IMT Nord Europe, 2022 - <b>High Honors</b>
-- Bsc. in Computer Science, Polytechnic University of Hauts-de-France, 2020 - <b>High Honors</b>
+### Msc. in Data Science
+*Centrale Lille, University of Lille, IMT Nord Europe* | 2022 | **High Honors**
+
+### Bsc. in Computer Science 
+*Polytechnic University of Hauts-de-France* | 2020 | **High Honors**

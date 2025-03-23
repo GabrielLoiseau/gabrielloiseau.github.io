@@ -1,6 +1,6 @@
 ---
 title: "All posts"
-description: "Learn how to use Blowfish and its features."
+description: "Technical articles about privacy, natural language processing, and research."
 
 
 cascade:
@@ -12,6 +12,6 @@ cascade:
 ---
 
 {{< lead >}}
-Work in progress
+Technical articles about privacy, natural language processing, and research.
 {{< /lead >}}
 
