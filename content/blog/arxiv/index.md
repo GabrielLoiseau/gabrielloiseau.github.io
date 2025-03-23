@@ -3,8 +3,8 @@ title: Simple daily arXiv filtering with DSPy
 date: 2025-03-23
 draft: false
 showReadingTime: true
-description: "Keeping up with the fast pace of arXiv releases can be tedious - let's automate it with LLMs"
-summary: "Keeping up with the fast pace of arXiv releases can be tedious - let's automate it with LLMs"
+description: "Keeping up with the fast pace of arXiv releases can be tedious - let`s automate it with LLMs"
+summary: "Keeping up with the fast pace of arXiv releases can be tedious - let`s automate it with LLMs"
 slug: "arxiv-filtering"
 tags: ["Large Language Models"]
 ---
