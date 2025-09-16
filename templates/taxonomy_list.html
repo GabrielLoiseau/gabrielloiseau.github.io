@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="crt scanlines" aria-hidden="true">
+<pre>
+        _
+       | ]
+     .-|=====-.
+     | | TAGS |   
+     |________|___
+          ||
+          ||
+          ||   www                %%%
+   vwv    ||   )_(,;;;,        ,;,\_/ www
+   )_(    ||   \|/ \_/         )_(\|  (_)
+   \|   \ || /\\|/  |/         \| \|// | 
+___\|//jgs||//_\V/_\|//_______\\|//V/\\|/__
+</pre>
+</div>
+
+<h1>Tags</h1>
+
+<p>
+	<small>{{ terms | length }} tag{{ terms | length | pluralize }} in total.</small>
+</p>
+
+<ul class="tags">
+	{%- for tag in terms -%}
+		<li><a href="{{ get_taxonomy_url(kind='tags', name=tag.name) }}"><span class="tag">{{ tag.name }}</span><span class="count">{{ tag.page_count }}</span></a></li>
+	{%- endfor -%}
+</ul>
+{% endblock content %}

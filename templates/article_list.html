@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{%- if paginator.pages -%}
+	{%- set number_of_posts = paginator.total_pages -%}
+{%- elif section.pages -%}
+	{%- set number_of_posts = section.pages | length -%}
+{%- endif -%}
+
+
+<h1>{{ section.title }}</h1>
+
+{{ section.content | safe }}
+
+<p>
+	<small>
+		{%- if config.taxonomies | length > 0 -%}
+			<a href="{{ get_url(path='tags') }}">Filter by tag</a>
+			<br />
+		{%- endif %}
+		{{ number_of_posts }} post{{ number_of_posts | pluralize }} in total.
+	</small>
+</p>
+
+{% include "partials/articles.html" %}
+
+{%- if paginator.pages -%}
+	<nav id="paginator">
+		{%- if paginator.first != current_url -%}
+			<a id="paginator-first" href="{{ paginator.first }}" title="First">
+				<i class="icon"></i>
+			</a>
+		{% else %}
+			<span id="paginator-first" title="First">
+				<i class="icon"></i>
+			</span>
+		{%- endif -%}
+
+		{%- if paginator.previous -%}
+			<a id="paginator-previous" href="{{ paginator.previous }}" title="Previous">
+				<i class="icon"></i>
+			</a>
+		{% else %}
+			<span id="paginator-previous" title="Previous">
+				<i class="icon"></i>
+			</span>
+		{%- endif -%}
+
+		<span id="paginator-counter">{{ paginator.current_index }}/{{ paginator.number_pagers }}</span>
+
+		{%- if paginator.next -%}
+			<a id="paginator-next" href="{{ paginator.next }}" title="Next">
+				<i class="icon"></i>
+			</a>
+		{%- else -%}
+			<span id="paginator-next" title="Next">
+				<i class="icon"></i>
+			</span>
+		{%- endif -%}
+
+		{%- if paginator.last != current_url -%}
+			<a id="paginator-last" href="{{ paginator.last }}" title="Last">
+				<i class="icon"></i>
+			</a>
+		{% else %}
+			<span id="paginator-last" title="Last">
+				<i class="icon"></i>
+			</span>
+		{%- endif -%}
+	</nav>
+{%- endif -%}
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% import "macros/rel_attributes.html" as macros_rel_attributes %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ lang }}" {% include "partials/default_theme.html" %}>
+{% include "partials/head.html" %}
+<body>
+{% block body %}
+	{%- if config.extra.nav.links %}
+		{% include "partials/nav.html" %}
+	{%- endif %}
+	<main id="main-content">
+		{% block custom %}{% endblock custom %}
+		{% block content %}{% endblock content %}
+	</main>
+	{% include "partials/footer.html" %}
+{% endblock body %}
+</body>
+</html>

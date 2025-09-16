@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ section.title }}<a href="atom.xml"><i class="icon feed"></i></a></h1>
+
+{{ section.description | markdown | safe }}
+
+<ul id="nanolog-list">
+    {%- for page in section.pages %}
+        <li>
+            <div>
+                <strong>{{ page.date | date(format=config.extra.date_format_long | default(value="%B %d, %Y, %R") , locale=config.extra.date_locale | default(value="en_US")) }}</strong>
+                <small>{{ page.title }}</small>
+            </div>
+            <div>
+                <a href="{{ page.permalink | safe }}">View Post</a>
+                {{ page.content | safe }}
+            </div>
+        </li>
+    {%- endfor %}
+</ul>
+
+{% endblock content %}

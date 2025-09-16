@@ -1,0 +1,112 @@
+blockquote {
+	&.note {
+		border-inline-start: 0.25rem solid var(--blue-fg);
+		color: var(--blue-fg-muted-2);
+
+		.alert-title,
+		li::marker,
+		a {
+			color: var(--blue-fg);
+		}
+
+		.alert-title .icon {
+			-webkit-mask-image: var(--icon-info);
+			mask-image: var(--icon-info);
+		}
+	}
+
+	&.tip {
+		border-inline-start: 0.25rem solid var(--green-fg);
+		color: var(--green-fg-muted-2);
+
+		.alert-title,
+		li::marker,
+		a {
+			color: var(--green-fg);
+		}
+
+		.alert-title .icon {
+			-webkit-mask-image: var(--icon-lightbulb);
+			mask-image: var(--icon-lightbulb);
+		}
+	}
+
+	&.important {
+		border-inline-start: 0.25rem solid var(--purple-fg);
+		color: var(--purple-fg-muted-2);
+
+		.alert-title,
+		li::marker,
+		a {
+			color: var(--purple-fg);
+		}
+
+		.alert-title .icon {
+			-webkit-mask-image: var(--icon-important);
+			mask-image: var(--icon-important);
+		}
+	}
+
+	&.warning {
+		border-inline-start: 0.25rem solid var(--yellow-fg);
+		color: var(--yellow-fg-muted-2);
+
+		.alert-title,
+		li::marker,
+		a {
+			color: var(--yellow-fg);
+		}
+
+		.alert-title .icon {
+			-webkit-mask-image: var(--icon-warning);
+			mask-image: var(--icon-warning);
+		}
+	}
+
+	&.caution {
+		border-inline-start: 0.25rem solid var(--red-fg);
+		color: var(--red-fg-muted-2);
+
+		.alert-title,
+		li::marker,
+		a {
+			color: var(--red-fg);
+		}
+
+		.alert-title .icon {
+			-webkit-mask-image: var(--icon-caution);
+			mask-image: var(--icon-caution);
+		}
+	}
+
+	&.edit,
+	&.fact {
+		border-inline-start: 0.25rem solid var(--fg-muted-2);
+
+		.alert-title,
+		li::marker,
+		a {
+			color: var(--fg-muted-2);
+		}
+	}
+
+	&.edit .alert-title .icon {
+		-webkit-mask-image: var(--icon-edit);
+		mask-image: var(--icon-edit);
+	}
+
+	&.fact .alert-title .icon {
+		-webkit-mask-image: var(--icon-trash);
+		mask-image: var(--icon-trash);
+	}
+
+	.alert-title {
+		margin-block-end: -0.75rem;
+		font-weight: var(--font-weight-semi-bold);
+
+		.icon {
+			vertical-align: -0.125em;
+			margin-inline-end: 0.25rem;
+		}
+	}
+}

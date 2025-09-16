@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+
+{% block content %}
+{%- set rel_attributes = macros_rel_attributes::rel_attributes() | trim -%}
+
+{%- if page.extra.banner -%}
+	{%- set blurnail = resize_image(path=page.colocated_path ~ page.extra.banner, width=4, height=2, op="fill", format="webp") -%}
+	<style>
+		:root {
+			--blurnail: url('{{ blurnail.url | safe }}');
+		}
+	</style>
+	<div id="banner-container">
+		<img id="banner" class="transparent no-hover{% if page.extra.banner_pixels %} pixels{% endif %}" src="{{ current_url ~ page.extra.banner }}" {% if config.markdown.lazy_async_image %}decoding="async" loading="lazy"{% endif %} />
+	</div>
+{%- endif -%}
+
+<article>
+	<div id="heading">
+		{%- if page.date -%}
+			<p>
+				<small>
+					<time datetime="{{ page.date | date(format='%+') }}">
+						Published on {{ page.date | date(format=config.extra.date_format, locale=config.extra.date_locale) -}}
+					</time>
+					{%- if page.updated -%}
+						<span> {{ config.extra.separator | default(value="•") }} </span>
+						<time datetime="{{ page.updated | date(format='%+') }}">
+							Updated on {{ page.updated | date(format=config.extra.date_format, locale=config.extra.date_locale) -}}
+						</time>
+					{%- endif -%}
+				</small>
+			</p>
+		{%- endif -%}
+
+		<h1>{{ page.title }}</h1>
+
+		{%- if page.authors or config.extra.show_reading_time -%}
+			<p>
+				<small>
+					{%- if page.authors -%}
+						<span>{% include "partials/authors.html" -%}</span>
+						{%- if config.extra.show_reading_time -%}
+							<span> {{ config.extra.separator | default(value="•") }} </span>
+						{%- endif -%}
+					{%- endif -%}
+
+					{%- if config.extra.show_reading_time -%}
+						<span>{{ page.reading_time }} min read</span>
+						{%- if page.taxonomies -%}
+							<span> {{ config.extra.separator | default(value="•") }} </span>
+						{%- endif -%}
+					{%- endif -%}
+				</small>
+			</p>
+		{%- endif -%}
+
+		{%- if page.taxonomies -%}
+			{%- for name, taxon in page.taxonomies %}
+				<ul class="tags">
+					{%-for item in taxon -%}
+						<li><a class="tag" href="{{ get_taxonomy_url(kind=name, name=item) }}">{{ item }}</a></li>
+					{%- endfor %}
+				</ul>
+			{%- endfor -%}
+		{%- endif %}
+	</div>
+
+	<div id="buttons-container">
+		{%- if page.extra.toc and page.toc | length > 0 -%}
+			<details id="toc" class="closable">
+				<summary title="Table of Contents"><i class="icon"></i></summary>
+				<div>
+					<strong class="title">Table of Contents</strong>
+					<div>
+						<ul>
+							{%- for h1 in page.toc -%}
+								<li>
+									<a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+									{%- if h1.children -%}
+										<ul>
+											{%- for h2 in h1.children -%}
+												<li>
+													<a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+												</li>
+											{%- endfor -%}
+										</ul>
+									{%- endif -%}
+								</li>
+							{%- endfor -%}
+						</ul>
+					</div>
+				</div>
+			</details>
+		{%- endif -%}
+		{%- if config.extra.show_backlinks and page.backlinks | length > 0 -%}
+			<details id="backlinks" class="closable">
+				<summary title="Backlinks"><i class="icon"></i></summary>
+				<div>
+					<strong class="title">Backlinks</strong>
+					<div>
+						<ul>
+							{%- for backlink in page.backlinks -%}
+								<li>
+									<a href="{{ backlink.permalink }}">{{ backlink.title }}</a>
+								</li>
+							{%- endfor -%}
+						</ul>
+					</div>
+				</div>
+			</details>
+		{%- endif -%}
+		<a id="go-to-top" href="#top" title="Go to Top"><i class="icon"></i></a>
+		{%- if config.extra.show_share_button -%}
+			<a id="share" href="https://shareopenly.org/share/?url={{ page.permalink }}&text={{ page.description | urlencode }}" rel="{{ rel_attributes }}" title="Share"><i class="icon"></i></a>
+		{%- endif -%}
+		{%- if config.extra.issues_url -%}
+			<a id="issue" href="{{ config.extra.issues_url }}" rel="{{ rel_attributes }}" title="File an Issue"><i class="icon"></i></a>
+		{%- endif -%}
+	</div>
+
+	{%- include "partials/statements.html" -%}
+
+	{{ page.content | safe }}
+</article>
+<!-- Disclaimer -->
+{%- if page.extra.show_disclaimer -%}
+<a class="disabled" style="font-size: 12px;">This blogpost is not endorsed by my past or present employer. All opinions here are my own.</a>
+{%- endif -%}
+
+{%- if page.extra.comments.id -%}
+	{%- include "partials/comments.html" -%}
+{%- endif -%}
+
+{%- if page.lower or page.higher -%}
+	<hr />
+	<nav id="post-nav">
+		{%- if page.higher -%}
+			<a class="post-nav-item post-nav-prev" href="{{ page.higher.permalink }}">
+				<div class="nav-arrow">Previous</div>
+				<span class="post-title">{{ page.higher.title }}</span>
+			</a>
+		{%- endif -%}
+		{%- if page.lower -%}
+			<a class="post-nav-item post-nav-next" href="{{ page.lower.permalink }}">
+				<div class="nav-arrow">Next</div>
+				<span class="post-title">{{ page.lower.title }}</span>
+			</a>
+		{%- endif -%}
+	</nav>
+{%- endif -%}
+{% endblock content %}

@@ -1,0 +1,96 @@
+title = "Gabriel Loiseau"
+base_url = "https://gabrielloiseau.github.io/"
+description = "NLP PhD Student"
+
+compile_sass = true
+minify_html = true
+build_search_index = true
+author = "Gabriel Loiseau"
+
+taxonomies = [{ name = "tags", feed = true }]
+
+[markdown]
+highlight_code = true
+extra_syntaxes_and_themes = ["sublime"]
+highlight_theme = "css"
+highlight_themes_css = [
+	{ theme = "monokai-pro-dark", filename = "syntax-theme-dark.css" },
+	{ theme = "monokai-pro-light", filename = "syntax-theme-light.css" },
+]
+smart_punctuation = true
+bottom_footnotes = true
+
+[search]
+index_format = "elasticlunr_json"
+
+[extra]
+# Red
+# accent_color = "#e14775"
+# accent_color_dark = "#ff6188"
+
+# Orange
+# accent_color = "#e16032"
+# accent_color_dark = "#fc9867"
+
+# Yellow
+# accent_color = "#cc7a0a"
+# accent_color_dark = "#ffd866"
+
+# Green
+accent_color = "#269d69"
+accent_color_dark = "#a9dc76"
+
+# Blue
+# accent_color = "#1c8ca8"
+# accent_color_dark = "#78dce8"
+
+# Purple
+# accent_color = "#7058be"
+# accent_color_dark = "#ab9df2"
+
+# Purple (GNOME)
+# accent_color = "#8939a4"
+# accent_color_dark = "#fba7ff"
+issues_url = "https://github.com/GabrielLoiseau/gabrielloiseau.github.io/issues"
+source_url = "https://github.com/GabrielLoiseau/gabrielloiseau.github.io"
+show_copy_button = true
+show_reading_time = true
+show_share_button = true
+show_backlinks = true
+# separator = "•"
+# title_separator = "-"
+date_format = "%B %d %Y"
+date_format_long = "%B %d %Y, %R"
+date_locale = "en_IE"
+analytics = true
+speed_insights = true
+enable_katex = true
+
+[extra.nav]
+auto_hide = true
+links = [
+	{ url = "@/publications/_index.md", name = "Publications" },
+	{ url = "@/talks/_index.md", name = "Talks" },
+	{ url = "@/blog/_index.md", name = "Blog" },
+]
+
+[extra.footer]
+show_copyright = true
+show_powered_by = true
+show_fediring = false
+links = [
+	{ url = "https://scholar.google.com/citations?user=W_Ck-tkAAAAJ", name = "Scholar"},
+	{ url = "https://aclanthology.org/people/g/gabriel-loiseau/", name = "ACL"},
+	{ url = "https://github.com/gabrielloiseau", name = "Github"},
+	{ url = "https://twitter.com/gabrielloiseau", name = "X"},
+	{ url = "https://www.linkedin.com/in/gabriel-loiseau/", name = "Linkedin"},
+]
+
+[extra.comments]
+host = "vmst.io"
+user = "gloiseau"
+show_qr = true
+
+[extra.debug]
+layout = false
+no_styles = false

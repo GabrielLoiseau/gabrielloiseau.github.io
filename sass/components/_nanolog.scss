@@ -1,0 +1,67 @@
+#nanolog-higher,
+#nanolog-lower {
+	display: block;
+	position: relative;
+	line-height: 1;
+
+	&::before {
+		display: block;
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline-start: -1.625rem;
+		border: 0.25rem solid var(--accent-color);
+		border-radius: 50%;
+		background-color: var(--bg-color);
+		width: 0.5rem;
+		height: 0.5rem;
+		content: "";
+	}
+}
+
+#nanolog-higher {
+	margin-block-end: -1rem;
+}
+
+#nanolog {
+	margin: 0 auto;
+	border-inline-start: 0.25rem solid var(--accent-color);
+	padding-inline-start: 1rem;
+	width: min(calc(var(--container-width) / 1.5), 100%);
+}
+
+#nanolog-heading {
+	display: flex;
+	flex-direction: column;
+
+	#nanolog-details {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		border-block-end: max(1px, 0.0625rem) solid var(--bg-muted-2);
+		padding-block-end: 1rem;
+
+		& > p {
+			margin: 0;
+		
+			small {
+				color: var(--fg-muted-1);
+				font-size: var(--font-size-large);
+			}
+		}
+
+		#buttons-container {
+			position: static;
+			flex-direction: row-reverse;
+			animation: none;
+			margin: 0;
+			inset-block-end: 0;
+			inset-inline-end: 0;
+
+			#backlinks summary + div {
+				width: min(var(--container-width) / 3, calc(100vw - 4.5rem));
+				inset-inline-end: 2.5rem;
+			}
+		}
+	}
+}

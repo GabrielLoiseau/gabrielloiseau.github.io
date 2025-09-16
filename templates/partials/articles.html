@@ -1,0 +1,82 @@
+{%- if paginator.pages -%}
+    {%- set pages = paginator.pages -%}
+{%- elif section.pages -%}
+    {%- set pages = section.pages -%}
+{%- else -%}
+    {%- set pages = term.pages -%}
+{%- endif -%}
+
+<div id="article-list">
+	{%- for page in pages %}
+		{%- if page.draft -%}
+			{%- set article_type = "draft" -%}
+			{%- set article_string = "Drafted" -%}
+		{%- elif page.extra.archive -%}
+			{%- set article_type = "archive" -%}
+			{%- set article_string = "Archived" -%}
+		{%- elif page.extra.featured -%}
+			{%- set article_type = "featured" -%}
+			{%- set article_string = "Featured" -%}
+		{%- elif page.extra.hot -%}
+			{%- set article_type = "hot" -%}
+			{%- set article_string = "Hot" -%}
+		{%- endif -%}
+		{%- if page.extra.banner -%}
+			{%- set blurnail = resize_image(path=page.colocated_path ~ page.extra.banner, width=4, height=2, op="fill", format="webp") -%}
+		{%- endif -%}
+		<article class="{% if article_type %}{{ article_type }}{% endif %}{% if page.extra.banner %} has-banner{% endif %}{% if page.extra.accent_color and not article_type %} colored{% endif %}" style="
+			{% if blurnail %}
+			 --blurnail: url('{{ blurnail.url | safe }}');
+			{% endif %}
+
+			{% if page.extra.accent_color and not article_type %}
+				--accent-color: {{ page.extra.accent_color }};
+				--accent-color-dark: {{ page.extra.accent_color_dark }};
+				--bg-color-dark: color-mix(in srgb, var(--accent-color) 10%, black);
+				--bg-muted-1: rgb(from var(--accent-color) r g b / var(--color-opacity-1));
+				--bg-muted-2: rgb(from var(--accent-color) r g b / var(--color-opacity-2));
+				--fg-muted-1: color-mix(in srgb, var(--accent-color) 15%, rgb(0 0 0 / 0.5));
+				--fg-muted-1-dark: color-mix(in srgb, var(--accent-color) 15%, rgb(255 255 255 / 0.5));
+				--fg-muted-2: color-mix(in srgb, var(--accent-color) 15%, rgb(0 0 0 / 0.6));
+				--fg-muted-2-dark: color-mix(in srgb, var(--accent-color) 15%, rgb(255 255 255 / 0.6));
+				--glass-bg-1: color-mix(in srgb, var(--accent-color) 10%, rgb(255 255 255 / var(--dim-opacity)));
+				--glass-bg-1-dark: color-mix(in srgb, var(--accent-color) 15%, rgb(0 0 0 / var(--dim-opacity)));
+			{% endif %}">
+			<a href="{{ page.permalink | safe }}"></a>
+			{% if article_type %}
+				<span class="badge">
+					<i class="icon"></i>
+					{{- article_string -}}
+				</span>
+			{%- endif %}
+			<h3>{{ page.title }}</h3>
+			{%- if page.description %}
+				{{ page.description | markdown | safe }}
+			{%- endif %}
+			{%- if page.date -%}
+				<div class="details">
+					<small>
+						<time datetime="{{ page.date | date(format='%+') }}" pubdate>
+							{{- page.date | date(format=config.extra.date_format, locale=config.extra.date_locale) -}}
+						</time>
+						{%- if page.authors -%}
+							<span> {{ config.extra.separator | default(value="•") }} {% include "partials/authors.html" -%}</span>
+						{%- endif -%}
+					</small>
+					{%- if page.taxonomies -%}
+						{%- for name, taxon in page.taxonomies %}
+							<small>
+								<ul class="tags">
+									{%-for item in taxon -%}
+										<li><a class="tag" href="{{ get_taxonomy_url(kind=name, name=item) }}">{{ item }}</a></li>
+									{%- endfor %}
+								</ul>
+							</small>
+						{%- endfor -%}
+					{%- endif %}
+					</small>
+				</div>
+			{%- endif -%}
+		</article>
+	{%- endfor %}
+</div>

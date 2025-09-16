@@ -1,0 +1,367 @@
+#badges {
+	position: relative;
+	padding-block-start: 0.75rem;
+
+	&:hover #here {
+		transform: none;
+		opacity: 1;
+
+		@media only screen and (max-width: 1074px) {
+			transform: rotate(-90deg);
+		}
+	}
+
+	&:has(#badges-expand:checked) {
+		float: none;
+		margin-inline-start: 0;
+		width: 100%;
+		overflow: visible;
+
+		.marquee-wrapper {
+			-webkit-mask-image: none;
+			content-visibility: visible;
+			mask-image: none;
+			margin: 0;
+			padding: 0;
+			overflow: visible;
+		}
+
+		.marquee {
+			position: static;
+
+			ul {
+				flex-shrink: 1;
+				flex-wrap: wrap;
+				justify-content: center;
+				animation: none;
+				transition: none;
+				margin-inline-end: 0;
+				height: fit-content;
+
+				&:nth-of-type(2) {
+					display: none;
+				}
+			}
+
+			img,
+			#increment {
+				position: relative;
+				z-index: 0;
+
+				&:hover:not(a:active img) {
+					transform: scale(2);
+					z-index: 1;
+				}
+			}
+		}
+
+		#badges-expand + label .icon {
+			-webkit-mask-image: var(--icon-minimize);
+			mask-image: var(--icon-minimize);
+		}
+
+		#badges-neocities {
+			display: block;
+
+			hr {
+				margin-block-start: 2rem;
+			}
+		}
+
+		#here {
+			transform: scale(0.5);
+			opacity: 0;
+
+			@media only screen and (max-width: 1074px) {
+				transform: scale(0.5) rotate(-90deg);
+			}
+		}
+	}
+
+	&:has(#badges-popup[open]) #here {
+		transform: scale(0.5);
+		opacity: 0;
+
+		@media only screen and (max-width: 1074px) {
+			transform: scale(0.5) rotate(-90deg);
+		}
+	}
+
+	& > p {
+		margin: 0.5rem 0 1rem;
+	}
+
+	&:not(:has(#badges-expand:checked)):has(.marquee img:hover, .marquee #increment:hover) .marquee ul {
+		animation-play-state: paused;
+
+		img:not(:hover),
+		#increment:not(:hover) {
+			opacity: var(--dim-opacity);
+			filter: blur(0.25rem);
+		}
+	}
+
+	.marquee-wrapper {
+		--mask: linear-gradient(
+			to right,
+			transparent,
+			black 1rem,
+			black calc(100% - 1rem),
+			transparent
+		);
+		-webkit-mask-image: var(--mask);
+		content-visibility: auto;
+		mask-image: var(--mask);
+		margin: -1rem -1rem -2.125rem;
+		padding: 1rem 0 2.125rem;
+		overflow: hidden;
+	}
+
+	.marquee {
+		display: flex;
+
+		ul {
+			display: flex;
+			flex-shrink: 0;
+			gap: 0.25rem;
+			animation: marquee-scroll var(--duration) linear infinite;
+			transition: var(--transition);
+			margin: 0;
+			margin-inline-end: 0.25rem;
+			padding: 0;
+			list-style: none;
+
+			@keyframes marquee-scroll {
+				from {
+					transform: translateX(0%);
+				}
+
+				to {
+					transform: translateX(-100%);
+				}
+			}
+		}
+
+		li {
+			display: flex;
+			padding: 0;
+			height: fit-content;
+			line-height: 0;
+		}
+
+		a:active {
+			img,
+			#increment {
+				transform: var(--active);
+			}
+		}
+
+		img,
+		#increment {
+			transition: all var(--transition), transform var(--transition-bezier);
+			margin: 0;
+
+			&:hover {
+				filter: blur(0) var(--drop-shadow);
+			}
+		}
+
+		img {
+			width: fit-content;
+			height: fit-content;
+		}
+
+		#increment {
+			box-shadow: none;
+			border: none;
+			border-radius: 0;
+			width: 5.5rem;
+			height: 1.9375rem;
+		}
+	}
+
+	#badges-neocities {
+		display: none;
+	}
+
+	.buttons {
+		margin-block-start: 0;
+	}
+
+	#badges-expand {
+		&:focus-visible + label {
+			animation: focus-in var(--transition);
+			outline: 0.125rem solid var(--accent-color);
+			outline-offset: 0.125rem;
+		}
+
+		@supports not selector(:focus-visible) {
+			&:focus + label {
+				animation: focus-in var(--transition);
+				outline: 0.125rem solid var(--accent-color);
+				outline-offset: 0.125rem;
+			}
+		}
+
+		& + label {
+			position: absolute;
+			transition: all var(--transition);
+			cursor: pointer;
+			inset-block-start: 0.5rem;
+			inset-inline-end: 2.75rem;
+			border-radius: var(--rounded-corner-small);
+			padding: 0.5rem;
+			color: var(--accent-color);
+			line-height: 0;
+
+			&:hover {
+				box-shadow: var(--edge-highlight);
+				background-color: var(--bg-muted-1);
+			}
+
+			&:active {
+				transform: var(--active);
+			}
+
+			.icon {
+				-webkit-mask-image: var(--icon-expand);
+				vertical-align: -0.125em;
+				mask-image: var(--icon-expand);
+				transition: var(--transition);
+			}
+		}
+	}
+
+	#badges-popup {
+		box-shadow: none;
+		border-radius: 0;
+		background-color: transparent;
+		padding: 0;
+
+		summary {
+			position: absolute;
+			transition: var(--transition);
+			inset-block-start: 0.5rem;
+			inset-inline-end: 0.5rem;
+			box-shadow: none;
+			border-radius: var(--rounded-corner-small);
+			background-color: transparent;
+			padding: 0.5rem;
+			color: var(--accent-color);
+			line-height: 0;
+
+			&:hover {
+				box-shadow: var(--edge-highlight);
+				background-color: var(--bg-muted-1);
+			}
+
+			&:active {
+				transform: var(--active);
+			}
+
+			&::before {
+				display: none;
+			}
+
+			.icon {
+				-webkit-mask-image: var(--icon-plus);
+				vertical-align: -0.125em;
+				mask-image: var(--icon-plus);
+				transition: var(--transition-bezier);
+				width: 1rem;
+				height: 1rem;
+			}
+		}
+
+		& > div {
+			-webkit-backdrop-filter: var(--blur);
+			display: flex;
+			position: absolute;
+			flex-direction: column;
+			z-index: 1;
+			backdrop-filter: var(--blur);
+			inset-block-start: 0.5rem;
+			inset-inline-end: 3rem;
+			box-shadow: var(--edge-highlight), var(--shadow-glass);
+			border-radius: var(--rounded-corner);
+			background-color: var(--glass-bg-1);
+			aspect-ratio: 1 / 1;
+			width: min(calc(var(--container-width) / 3), calc(90vw - 3rem));
+
+			div {
+				--mask: linear-gradient(
+					to bottom,
+					transparent,
+					black 1rem,
+					black calc(100% - 1rem),
+					transparent
+				);
+				-webkit-mask-image: var(--mask);
+				flex: 1;
+				mask-image: var(--mask);
+				padding: 1rem;
+				padding-block-start: 0.75rem;
+				overflow: auto;
+
+				p:first-of-type {
+					margin-block-start: 0;
+				}
+
+				p:has(img) {
+					display: flex;
+					flex-direction: row;
+					flex-wrap: wrap;
+					justify-content: center;
+					gap: 0.25rem;
+				}
+
+				img {
+					display: inline-block;
+					margin: 0;
+				}
+			}
+		}
+
+		&[open] {
+			summary .icon {
+				transform: rotate(45deg);
+			}
+
+			& > div {
+				transform-origin: top right;
+				animation: expand-top-right var(--transition-bezier);
+			}
+		}
+	}
+
+	#here {
+		--mask: url("here.gif");
+		-webkit-mask-image: var(--mask);
+		position: absolute;
+		transform: scale(0.5);
+		transform-origin: 0.25rem 1.75rem;
+		opacity: 0;
+		mask-image: var(--mask);
+		mask-size: cover;
+		transition: var(--transition-bezier);
+		inset-block-start: 0.5rem;
+		inset-inline-start: 12.5rem;
+		background-color: var(--accent-color);
+		width: 12.125rem;
+		height: 4.75rem;
+		pointer-events: none;
+
+		@media (prefers-reduced-motion) {
+			--mask: url("here-static.gif");
+		}
+
+		@media only screen and (max-width: 1074px) {
+			transform: scale(0.5) rotate(-90deg);
+			inset-block-start: -1rem;
+		}
+
+		@media only screen and (max-width: 784px) {
+			display: none;
+		}
+	}
+}
