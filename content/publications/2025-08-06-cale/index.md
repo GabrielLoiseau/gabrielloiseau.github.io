@@ -2,7 +2,7 @@
 title = "CALE : Concept-Aligned Embeddings for Both Within-Lemma and Inter-Lemma Sense Differentiation"
 description = "Bastien Liétard, Gabriel Loiseau"
 [taxonomies]
-tags = ["arXivPreprint"]
+tags = ["EACL2026"]
 [extra]
 accent_color = "#5c616a"
 accent_color_dark = "#a4bac0"
