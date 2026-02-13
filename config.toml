@@ -10,15 +10,15 @@ author = "Gabriel Loiseau"
 taxonomies = [{ name = "tags", feed = true }]
 
 [markdown]
-highlight_code = true
-extra_syntaxes_and_themes = ["sublime"]
-highlight_theme = "css"
-highlight_themes_css = [
-	{ theme = "monokai-pro-dark", filename = "syntax-theme-dark.css" },
-	{ theme = "monokai-pro-light", filename = "syntax-theme-light.css" },
-]
 smart_punctuation = true
 bottom_footnotes = true
+
+[markdown.highlighting]
+# Light/dark themes; Giallo uses VSCode themes (monokai-pro-* are not built-in)
+light_theme = "one-light"
+dark_theme = "one-dark-pro"
+# Use "class" to generate giallo-light.css and giallo-dark.css (needed for your head.html)
+style = "class"
 
 [search]
 index_format = "elasticlunr_json"
