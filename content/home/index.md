@@ -28,6 +28,8 @@ You can find more information on my [LinkedIn](https://www.linkedin.com/in/gabri
 My publications are available on the dedicated [publications](@/publications/_index.md) page and through my [Google Scholar](https://scholar.google.com/citations?user=W_Ck-tkAAAAJ) profile. A comprehensive list of my presentations can be found on the [talks](@/talks/_index.md) page, and you can explore the public software libraries I've developed and contributed to on my [GitHub](https://github.com/gabrielloiseau).
 
 ## News
+- **January 2026.** Our paper on Concept-Aligned Embeddings (CALE) has been accepted to *EACL 2026*.
+- **November 2025.** I presented our work on Tau-Eval at *EMNLP*!
 - **September 2025.** Our Tau-Eval paper has been accepted to *EMNLP 2025*.
 - **June 2025.** I'll be presenting our new evaluation framework for text anonymization at the 15th *Atelier sur la Protection de la Vie Privée* in Chasseneuil-du-Poitou (June 9-12).
 - **June 2025.** New preprint available! We've developed a comprehensive evaluation framework and Python library for assessing text anonymization methods.
