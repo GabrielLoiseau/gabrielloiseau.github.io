@@ -35,7 +35,6 @@ My publications are available on the dedicated [publications](@/publications/_in
 - **June 2025.** I'll be presenting our new evaluation framework for text anonymization at the 15th *Atelier sur la Protection de la Vie Privée* in Chasseneuil-du-Poitou (June 9-12).
 - **June 2025.** New preprint available! We've developed a comprehensive evaluation framework and Python library for assessing text anonymization methods.
 - **April 2025.** Presenting at *NAACL* (April 29 - May 4) on our latest PrivateNLP paper.
-- **March 2025.** Paper accepted at PrivateNLP! Our work introduces a novel reinforcement learning approach for authorship obfuscation.
 
 ## Contact Me
 
