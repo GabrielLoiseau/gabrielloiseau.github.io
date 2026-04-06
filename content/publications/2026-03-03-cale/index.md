@@ -4,8 +4,8 @@ description = "Bastien Liétard, Gabriel Loiseau"
 [taxonomies]
 tags = ["EACL2026"]
 [extra]
-accent_color = "#5c616a"
-accent_color_dark = "#a4bac0"
+accent_color = "#e14775"
+accent_color_dark = "#ff6188"
 +++
 
 ## Abstract
