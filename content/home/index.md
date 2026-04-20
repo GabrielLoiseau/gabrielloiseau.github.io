@@ -28,6 +28,7 @@ You can find more information on my [LinkedIn](https://www.linkedin.com/in/gabri
 My publications are available on the dedicated [publications](@/publications/_index.md) page and through my [Google Scholar](https://scholar.google.com/citations?user=W_Ck-tkAAAAJ) profile. A comprehensive list of my presentations can be found on the [talks](@/talks/_index.md) page, and you can explore the public software libraries I've developed and contributed to on my [GitHub](https://github.com/gabrielloiseau).
 
 ## News
+- **April 2026.** Our paper on adaptive text anonymization has been accepted to *ACL 2026* (Findings).
 - **March 2026.** Our paper on distilling privacy sensitivity assessment from LLMs has been accepted to CALD-pseudo (*LREC 2026* workshop)! Check out the [preprint](https://arxiv.org/abs/2603.29497).
 - **February 2026.** New preprint on adaptive text anonymization: a novel task framework for context-aware, task-specific anonymization of text!
 - **January 2026.** Our paper on Concept-Aligned Embeddings (CALE) has been accepted to *EACL 2026* (oral).
